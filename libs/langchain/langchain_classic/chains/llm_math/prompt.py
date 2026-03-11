@@ -2,15 +2,15 @@ from langchain_core.prompts.prompt import PromptTemplate
 
 _PROMPT_TEMPLATE = """Translate a math problem into a expression that can be executed using Python's numexpr library. Use the output of running this code to answer the question.
 
-Question: ${{Question with math problem.}}
+Question: {{Question with math problem.}}
 ```text
-${{single line mathematical expression that solves the problem}}
+{{single line mathematical expression that solves the problem}}
 ```
 ...numexpr.evaluate(text)...
 ```output
-${{Output of running the code}}
+{{Output of running the code}}
 ```
-Answer: ${{Answer}}
+Answer: {{Answer}}
 
 Begin.
 
